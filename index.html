@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Portfolio</title>
+		<title>Dimension by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -58,9 +58,54 @@
 						<!-- Projects -->
 							<article id="work">
 								<h2 class="major">Projects</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+								<span class="image main">
+									<!-- <img src="images/pic02.jpg" alt="" /> -->
+
+									<div class="slideshow-container">
+
+										<!-- Full-width images with number and caption text -->
+										<div class="mySlides fade">
+										  <div class="numbertext">1 / 4</div>
+										  <img src="images/image1.png" alt="" style="width:100%; max-height: 100%;"/>
+										  <div class="text">Caption Text</div>
+										</div>
+									  
+										<div class="mySlides fade">
+										  <div class="numbertext">2 / 4</div>
+										  <img src="images/image2.png" style="width:100%; max-height: 100%;">
+										  <div class="text">Caption Two</div>
+										</div>
+									  
+										<div class="mySlides fade">
+										  <div class="numbertext">3 / 4</div>
+										  <img src="images/image3.png" style="width:100%; max-height: 100%;">
+										  <div class="text">Caption Three</div>
+										</div>
+
+										<div class="mySlides fade">
+											<div class="numbertext">3 / 4</div>
+											<img src="images/image4.png" style="width:100%; max-height: 100%;">
+											<div class="text">Caption Four</div>
+										  </div>
+									  
+										<!-- Next and previous buttons -->
+										<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+										<a class="next" onclick="plusSlides(1)">&#10095;</a>
+									  </div>
+									  <br>
+									  
+									  <!-- The dots/circles -->
+									  <div style="text-align:center">
+										<span class="dot" onclick="currentSlide(1)"></span>
+										<span class="dot" onclick="currentSlide(2)"></span>
+										<span class="dot" onclick="currentSlide(3)"></span>
+										<span class="dot" onclick="currentSlide(4)"></span>
+									  </div>
+
+								</span>
 								<p>Checkout my projects on github</p>
 								<li><a href="https://github.com/EmmanuelJohnRosq/Details-Blooms-Customer">A Flower Bouquet Arrangement Automator Using Progressive Web App Framework- Customer Side</a></li>
+								<li><a href="https://github.com/EmmanuelJohnRosq/Details-Blooms-Customer">A Flower Bouquet Arrangement Automator Using Progressive Web App Framework- Admin Side</a></li>
 								<li><a href="https://github.com/EmmanuelJohnRosq/Fallin---Phyton-Game">A Simple Game Course Project using Phyton Programming</a></li>
 								<li><a href="https://github.com/EmmanuelJohnRosq/Laravel-Activities----Course-Project">Laravel Activities for Course Project Computer Science</a></li>
 								<li><a href="https://github.com/EmmanuelJohnRosq/MeDrApp-Admin---Course-Project">Finalization Course Project, Medical Doctor Application Admin Side using Typescript</a></li>
@@ -332,6 +377,38 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<div id="bg"></div>
 
 		<!-- Scripts -->
+			
+			<script>
+				let slideIndex = 1;
+				showSlides(slideIndex);
+				
+				// Next/previous controls
+				function plusSlides(n) {
+				  showSlides(slideIndex += n);
+				}
+				
+				// Thumbnail image controls
+				function currentSlide(n) {
+				  showSlides(slideIndex = n);
+				}
+				
+				function showSlides(n) {
+				  let i;
+				  let slides = document.getElementsByClassName("mySlides");
+				  let dots = document.getElementsByClassName("dot");
+				  if (n > slides.length) {slideIndex = 1}
+				  if (n < 1) {slideIndex = slides.length}
+				  for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				  }
+				  for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				  }
+				  slides[slideIndex-1].style.display = "block";
+				  dots[slideIndex-1].className += " active";
+				}
+				</script>
+
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
